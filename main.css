@@ -47,7 +47,10 @@ body {
   margin: 0 auto;
   text-align: center;
   width: 85%;
-  max-width: 440px;
+  max-width: 500px;
+}
+.card__header {
+  height: auto;
 }
 /*CARD BODY SECTIOIN */
 main {
@@ -56,12 +59,13 @@ main {
 .card__main h1 {
   color: var(--clr-primary-500);
   font-weight: var(--fn-wght-900);
-  font-size: 1.4rem;
+  font-size: clamp(1.4rem, 4vw, 2rem);
   margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 .card__main p {
   color: var(--clr-primary-400);
-  font-size: 1rem;
+  font-size: clamp(1rem, 4vw, 1.1rem);
   padding: 0.5rem 0.2rem;
   line-height: 1.5;
   margin-bottom: 1rem;
