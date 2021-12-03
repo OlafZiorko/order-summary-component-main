@@ -1,0 +1,168 @@
+:root {
+  /*PRIMARY COLORS PALLET */
+
+  --clr-primary-100: hsl(225, 100%, 94%);
+  --clr-primary-200: hsl(225, 100%, 98%);
+  --clr-primary-300: hsl(245, 75%, 52%);
+  --clr-primary-hover: hsla(245, 75%, 52%, 0.822);
+  --clr-primary-400: hsl(224, 23%, 55%);
+  --clr-primary-500: hsl(223, 47%, 23%);
+
+  /*FONTS */
+  --fn-fam: "Red Hat Display", sans-serif;
+  --fn-wght-500: 500;
+  --fn-wght-700: 700;
+  --fn-wght-900: 900;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+img {
+  width: 100%;
+}
+html,
+body {
+  height: 100vh;
+}
+body {
+  background-image: url(./images/pattern-background-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: var(--clr-primary-100);
+  display: grid;
+  place-content: center;
+  font-family: var(--fn-fam);
+  font-size: 62.5%;
+}
+.card {
+  background-color: white;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  margin: 0 auto;
+  text-align: center;
+  width: 85%;
+  max-width: 440px;
+}
+/*CARD BODY SECTIOIN */
+main {
+  padding: 1.5rem;
+}
+.card__main h1 {
+  color: var(--clr-primary-500);
+  font-weight: var(--fn-wght-900);
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+.card__main p {
+  color: var(--clr-primary-400);
+  font-size: 1rem;
+  padding: 0.5rem 0.2rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+.card__main--summary {
+  background-color: var(--clr-primary-200);
+  border-radius: 0.6rem;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-areas: "ico" "summary" "change";
+  gap: 1rem;
+
+  padding: 1rem;
+}
+.summary__image {
+  width: clamp(3rem, 3vw, 5rem);
+  grid-area: ico;
+}
+.summary--plan {
+  text-align: center;
+  grid-area: summary;
+  display: flex;
+  flex-direction: column;
+  align-items: center flex-start;
+  justify-content: flex-start;
+}
+.summary--plan strong,
+.summary--plan span {
+  display: block;
+  font-size: clamp(0.8rem, 4vw, 0.9rem);
+}
+.summary--plan strong {
+  color: var(--clr-primary-500);
+}
+.summary--plan span {
+  color: var(--clr-primary-400);
+  font-weight: var(--fn-wght-500);
+  padding-top: 0.1rem;
+}
+.card__main--summary a {
+  font-size: clamp(0.9rem, 3vw, 0.9rem);
+  grid-area: change;
+  color: var(--clr-primary-300);
+  font-weight: var(--fn-wght-700);
+  text-decoration: underline;
+}
+/*CARD FOOTER SECTIOIN */
+.card__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+}
+
+.card__footer .btn {
+  border: none;
+  background-color: transparent;
+  border-radius: 0.5rem;
+  color: var(--clr-primary-400);
+  font-size: clamp(0.9rem, 5vw, 0.9rem);
+  font-weight: var(--fn-wght-900);
+  padding: 1em 1em;
+  line-height: 1.4;
+  cursor: pointer;
+}
+.card__footer .active {
+  background-color: var(--clr-primary-300);
+  color: var(--clr-primary-100);
+}
+/*HOVER STATES */
+.active:hover,
+.active:focus {
+  background-color: var(--clr-primary-hover);
+  cursor: pointer;
+}
+a:hover,
+a:focus {
+  color: var(--clr-primary-hover);
+  text-decoration: none;
+  cursor: pointer;
+}
+.order:hover,
+.order:focus {
+  color: hsl(0, 0%, 0%);
+}
+/*MEDIA QUERIES */
+@media all and (min-width: 325px) {
+  .card__main--summary {
+    grid-template-columns: auto;
+    grid-template-areas: "ico summary change";
+    align-items: center;
+  }
+  .summary--plan {
+    text-align: left;
+  }
+}
+@media all and (min-width: 800px) {
+  body {
+    background-image: url(./images/pattern-background-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+}
